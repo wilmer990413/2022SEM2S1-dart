@@ -4,6 +4,8 @@ void main() {
   ejercicio1();
   print("EJERCICIO 2");
   ejercicio2();
+  print("EJERCICIO 3");
+  ejercicio3();
 }
 void ejercicio1(){
   List <int> edadesPersonas = [12,13,14,15,16,17];
@@ -21,4 +23,21 @@ void ejercicio2(){
   final listaFin = lista.fold<Set>(lista.first.toSet(), (a, b) => a.intersection(b.toSet()));
   print("Listas $lista");
   print("Elememtos en Comun $listaFin");
+}
+void ejercicio3(){
+  List <String> cadenas = ["La ruta normal", "Esto si es", "Paradises", "Hola", "Sol", "Ana", "Oro", "Oso",
+				"A ti no, bonita"];
+  for(String cadena in cadenas){
+    if(esPalindromo(cadena) == true){
+      print( "¿'" + cadena + "'es palindromo? Si");
+    } else {
+      print( "¿'" + cadena + "'es palindromo? No");
+    }
+  }
+}
+
+bool esPalindromo(String cadena){
+  cadena = cadena.toLowerCase().replaceAll("á", "a").replaceAll("é", "e").replaceAll("í", "i").replaceAll("ó", "o").replaceAll("ú", "u").replaceAll(" ", "").replaceAll(".", "").replaceAll(",", "");
+  String invertida = cadena.split('').reversed.join();
+  return invertida==cadena;
 }
