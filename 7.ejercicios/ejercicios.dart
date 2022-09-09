@@ -6,6 +6,8 @@ void main() {
   ejercicio2();
   print("EJERCICIO 3");
   ejercicio3();
+  print("EJERCICIO 4");
+  ejercicio4();
 }
 void ejercicio1(){
   List <int> edadesPersonas = [12,13,14,15,16,17];
@@ -35,9 +37,19 @@ void ejercicio3(){
     }
   }
 }
-
 bool esPalindromo(String cadena){
   cadena = cadena.toLowerCase().replaceAll("á", "a").replaceAll("é", "e").replaceAll("í", "i").replaceAll("ó", "o").replaceAll("ú", "u").replaceAll(" ", "").replaceAll(".", "").replaceAll(",", "");
   String invertida = cadena.split('').reversed.join();
   return invertida==cadena;
+}
+void ejercicio4(){
+  List <int> a = [1,4,9,16,25,36,49,64,81,100];
+  List <int> b = []..addAll(a);
+  for(int i = 0; i < b.length; i++){
+    if((b[i]%2) != 0){
+      print(b.removeAt(i));
+    }
+  }
+  print("Lista Normal: " "${a}");
+  print("Lista de Pares: " "${b}");
 }
